@@ -86,3 +86,6 @@ ups.instantShutDown()
 | `0Q`            | Toggle beeper command.                 |
 | `0QS`           | Get status command.                    |
 | `custom command`| Custom shutdown command with `wtime`.  |
+
+
+# License

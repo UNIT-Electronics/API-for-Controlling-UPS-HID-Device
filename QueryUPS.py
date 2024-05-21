@@ -181,14 +181,14 @@ class UPS:
         self.UPS.closeHID()    
     
 #Example usage
-#UPS = UPS(0x0665,0x5161,0)
+UPS = UPS(0x0665,0x5161,0)
 #time.sleep(2)
 #UPS.powerON()
 #UPS.afters18secShutDown()
 #UPS.after1minRestart()
 #UPS.customShutdown('0S.2R0000')
 #UPS.customShutdown('0S02R0000')
-#print(UPS.getStatus())
+print(UPS.getStatus())
 #UPS.batteryTest()
 #UPS.toogleBeeper()
 #UPS.instantShutDown()

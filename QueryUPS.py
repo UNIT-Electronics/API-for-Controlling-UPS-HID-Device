@@ -110,16 +110,15 @@ class UPS:
             str: JSON-formatted string containing the status information of the UPS device: Vin, Vout, Freq, Mode, Vbat.
         """
         respuesta = []
-        num_bytes = 20
+        num_bytes = 9
         self.texto_decodificado = ""
         self.UPS.openHID()
         self.UPS.writeHID('0QS')
         self.UPS.writeHID('0\r0')
-        time.sleep(0.1)
-        
-        # Save response
-        for i in range(num_bytes):
+        index=1
+        while index<6: 
             respuesta.append(self.UPS.readHID(num_bytes))
+            index+=1
         
         self.UPS.closeHID()
            
@@ -181,14 +180,19 @@ class UPS:
         self.UPS.closeHID()    
     
 #Example usage
-UPS = UPS(0x0665,0x5161,0)
-#time.sleep(2)
+UPS = UPS(0x0665,0x5161,1)
 #UPS.powerON()
+#time.sleep(8)
 #UPS.afters18secShutDown()
 #UPS.after1minRestart()
 #UPS.customShutdown('0S.2R0000')
 #UPS.customShutdown('0S02R0000')
+print("Revisando status...")
 print(UPS.getStatus())
 #UPS.batteryTest()
 #UPS.toogleBeeper()
+#time.sleep(5)
 #UPS.instantShutDown()
+#print("Apagando UPS...")
+#time.sleep(5)
+#print(UPS.getStatus())

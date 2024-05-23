@@ -114,14 +114,14 @@ class HID:
             if self.print_output: print("HID Device not open!")
 
 # Example usage
-# UPS = HID(0x0665, 0x5161)
-# UPS.openHID()
-# UPS.writeHID('0C')
-# UPS.writeHID('0\r')
-# UPS.closeHID()
+#UPS = HID(0x0665, 0x5161)
+#UPS.openHID()
+#UPS.writeHID('0C')
+#UPS.writeHID('0\r')
+#UPS.closeHID()
 #
-# UPS.openHID()
-# UPS.writeHID('0S00R0000')
-# UPS.writeHID('0\r0000000')
-# UPS.closeHID()
+#UPS.openHID()
+#UPS.writeHID('0S00R0000')
+#UPS.writeHID('0\r0000000')
+#UPS.closeHID()
 
